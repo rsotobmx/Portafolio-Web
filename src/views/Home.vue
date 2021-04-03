@@ -295,7 +295,7 @@
 
            
       <div>
-        <p>Hola mundo</p>
+        
         <br>
         <Footer/>
       </div>
