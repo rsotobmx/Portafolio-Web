@@ -222,7 +222,7 @@
 
         </div>
 
-        <section id="portafolio">
+        <section  id="portafolio">
           <div class="container">
           <br>
           <br>
@@ -237,12 +237,12 @@
           <div class="row">
        
             
-              <div class="row " v-if="imagendesc!=false ">
-                  <div class="" v-for="imagen in imagenes" :key="imagen">
+              <div class="columns" v-if="imagendesc!=false ">
+                  <div class="column" v-for="imagen in imagenes" :key="imagen" >
 
 
-                                <div class="col-sm-6">
-                                  <div class="card">
+                                <div class="col-sm-10" >
+                                  <div class="card" >
                                     <img :src="imagen.foto" alt="" class="card-img-top">
                                     <div class="card-body">
                                       <h3 class="card-title">{{imagen.nombre}}</h3>
@@ -250,6 +250,7 @@
                                        <p class="card-text"><b>SubCategoria: </b>{{imagen.subcategoria}}.</p>
                                         <p class="card-text"><b>Desarrollo: </b>{{imagen.desarrollo}}.</p>
                                       <a v-bind:href="imagen.url" target="_blank" class="btn btn-primary">Reproducir</a>
+                                      
                                     </div>
                                   </div>
                                 </div>
@@ -261,13 +262,13 @@
                           <div class="modal-background"></div>
                           <div class="modal-content">
                               
-                           
+                        
                            
                                 
                                
                           </div>
                           <button class="modal-close is-large" @click="modal2"></button>
-                      </div>
+                        </div>
                      
                         
                     </a>
@@ -285,10 +286,9 @@
           
           
         </section>
-        <br><br><br><br><br>
+       
 
-     
-
+    
        
 
 
