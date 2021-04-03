@@ -1,0 +1,424 @@
+ //Actualizando Correo
+                   
+               
+                    user.updateEmail(this.email).then((u)=> {
+                        this.email=''
+                        console.log(u)
+                        
+                    // Update successful.
+                    }).catch((err)=> {
+                        this.error=err.message
+                    }); 
+
+
+                  
+                   
+
+                    
+                    //actualizamos constraseña
+                    if(this.pass.length>=6){
+                        
+                        user.updatePassword(this.pass).then((u)=> {
+                        this.pass=''
+                        console.log(u)
+                        
+                    // Update successful.
+                    }).catch((err)=> {
+                        this.error=err.message
+                        this.error="Datos no actualizados"
+                    }); 
+
+                    }
+
+var credential = firebase.auth.EmailAuthProvider.credential(
+                            user.email, 
+                            user.providerPassword
+                                                   
+                                                   );
+                                                  
+
+
+
+
+
+
+                   var credential = firebase.auth.EmailAuthProvider.credential(
+                            user.email, 
+                            this.pass
+                            
+                                                   
+                                                   );
+                        
+                        
+                       
+                        // Now you can use that to reauthenticate
+                        user.reauthenticateWithCredential(credential);
+
+
+ref.child('imagenes/000.png' ).getDownloadURL()
+            .then((url)=> {
+                this.imagendesc=url
+                console.log(url)
+            })
+
+
+
+
+              <div class="field">
+                            <label class="label">Categoria</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select v-model="category" multiple='multiple' >
+                                        <option disabled value="">Seleccione una categoria</option>
+                                        <option value="1" >Web</option>
+                                        <option value="2" >Aplicación de escritorio</option>
+                                        <option value="3" >Móvil</option>
+                                        
+                                    </select>
+                                </div>
+                               
+                               
+                            </div>
+                        </div>
+
+ db.collection("usuarios").doc(user.photoURL)
+             .get().then(result =>{
+                 
+                 this.printn=result.data().videos[0]
+                 
+                
+                 
+                 
+
+             }) 
+
+             db.collection("usuarios").doc(user.photoURL)
+             .get().then(result =>{
+                 
+                 
+                 this.printc=result.data().videos[1]
+                
+                 
+                 
+
+             }) 
+
+               printn:{
+              nombre:'robert',
+            enlace:'werb',
+            categoria:'123'
+          },
+          printc:'',
+          prints:'',
+          printd:'',
+
+           nombrevideo:datosNombre,
+                                    categoria: datos,
+                                       
+                                       subcategoria:datos2,
+                                    desarrollo: datos3,
+                                    enlace:this.enlace
+
+                                     videos: firebase.firestore.FieldValue.arrayUnion(this.nombre,datos,datos2,datos3,this.enlace)  ,
+                                    
+
+
+                                    
+
+                             var db=firebase.firestore();
+            db.collection("usuarios").doc("DC").delete().then(function() {
+                    console.log("Document successfully deleted!");
+            }).catch(function(error) {
+                    console.error("Error removing document: ", error);
+            });
+                            
+
+
+                             db.collection("usuarios").doc(user.photoURL)
+
+            
+            
+            .update({
+                
+            })
+            .then(() => {
+                console.log("Document successfully updated!");
+            })
+            .catch((error) => {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+
+
+
+
+ db.collection("usuarios").doc(user.photoURL)
+
+
+                    
+                    .update({
+                        videos: aux
+                        
+                    })
+                    .then(() => {
+                        console.log("Document successfully updated!");
+                    })
+                    .catch((error) => {
+                        // The document probably doesn't exist.
+                        console.error("Error updating document: ", error);
+                    });
+
+
+
+                     <div class="container">
+
+                 <div  class="navbar-brand">
+            <router-link class="navbar-item" to="/">
+                <div class="logo">
+                    <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/508/4782387508_837650a9-42f7-4b43-acfa-cb08f5575f3a.png?cb=1614813635"  width="150" height="100" >
+                    
+                </div>
+
+                
+            </router-link>
+
+            <a role="button" class="navbar-burger" :class="{'is-active': isOpen}" @click.prevent="toggleMenu" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div  id="navbarBasicExample " class="navbar-menu bar " :class="{'is-active': isOpen}">
+            <div class="navbar-start">
+            <router-link class="navbar-item is-primary" to="/">
+            
+                Inicio
+               
+            </router-link>
+            
+
+        
+            </div>
+            
+            <div class="navbar-end">
+            
+                               
+            <div class="navbar-item">
+                <template v-if="user">
+                    
+                    <div class="navbar-item has-dropdown is-hoverable">
+                      
+                            
+                        
+                        <a class="navbar-link">
+                            
+                            
+                            {{user.displayName || user.email   }}
+
+                        </a>
+                        
+
+                        <div class="navbar-dropdown">
+                            <router-link class="navbar-item" to="/dashboard">
+                                Perfil Administrador
+                            </router-link>
+                           
+                            <a class="navbar-item" to=/mensaje>
+                                Componentes Web
+                            </a>
+
+                            <router-link class="navbar-item" to="/galeria">
+                                Galería de Videos
+                            </router-link>
+
+                            <router-link class="navbar-item" to="/mensaje">
+                                Mensajes
+                            </router-link>
+                            
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <a class="button is-primary" @click.prevent="logout">
+                            <strong>Salir</strong>
+                        </a>
+                    </div>
+                    
+                     
+                    
+                </template>
+                <template v-else>
+                    <div class="buttons">
+                        <router-link class="button is-primary" to="/register">
+                            <strong>Registrarme</strong>
+                        </router-link>
+                        <router-link class="button is-light" to="/login">
+                            Iniciar Sesion
+                        </router-link>
+                    </div>
+
+                </template>
+
+                
+            </div>
+        </div>
+        </div>
+
+
+        </div>
+       
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Parallax</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <div id="wrapper">
+
+
+        <section id="bloque1">
+
+            <img id="logo" src="img/logo.png" />
+            <h1>Efecto parallax con CSS3</h1>
+    
+        </section>
+
+        <section id="bloque2">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+        </section>
+
+
+        <section id="bloque3">
+
+            <h2>Creación profesional de páginas web con HTML5 y CSS3</h2>
+
+        </section>
+
+
+        <section id="bloque4">
+
+            <h2>Hasta pronto</h2>
+           
+        </section>
+
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url("img/bg-patt.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    font-family: "Josefin Sans",sans-serif;
+}
+#wrapper {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100% !important;
+}
+section {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1100px;
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100% !important;
+}
+#bloque1 {
+    background-image: url("img/infinito.jpg");
+}
+#bloque2 {
+    background-image: url("img/pisa.jpg");
+}
+#bloque3 {
+    background-image: url("img/puente-sf.jpg");
+}
+#bloque4 {
+    background-image: url("img/gato.jpg");
+}
+h1 {
+    background-color: #02223a;
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    font-size: 5em;
+    font-weight: bold;
+    margin-top: 3em;
+    opacity: 0.76;
+    text-align: center;
+    text-shadow: 1px 1px 1px #666;
+    text-transform: uppercase;
+    width: 100%;
+}
+h2 {
+    color: #fff;
+    font-size: 5em;
+    font-weight: bold;
+    margin-top: 5em;
+    opacity: 0.85;
+    text-align: center;
+    text-shadow: 1px 1px 1px #ccc;
+    text-transform: uppercase;
+}
+#logo {
+    display: block;
+    margin: 6em auto 0;
+    opacity: 0.8;
+    width: 200px;
+}
+#bloque2 p {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 7em auto;
+    max-width: 800px;
+    padding: 1.5em;
+}
+
+// iamgeneesss
+    ref.child('imagenes/')
+              .listAll()
+              .then(res=>{
+                  res._delegate.items.map((item)=>{
+                      
+                    ref.child(item._location.path_)
+                    .getDownloadURL()
+                    .then((url)=>{
+                       this.imagendesc=true
+                        this.imagenes.push(url)
+                        console.log(this.imagenes)
+                    })
+                  
+                  })
+              })
+            
