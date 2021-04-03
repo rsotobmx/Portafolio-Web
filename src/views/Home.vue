@@ -237,11 +237,11 @@
           <div class="row">
        
             
-              <div class="row" v-if="imagendesc!=false ">
+              <div class="row " v-if="imagendesc!=false ">
                   <div class="" v-for="imagen in imagenes" :key="imagen">
 
 
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                   <div class="card">
                                     <img :src="imagen.foto" alt="" class="card-img-top">
                                     <div class="card-body">
@@ -369,6 +369,7 @@ export default {
                   this.pNombre=result.data().nombre
                 
              })
+             
 
            //Carga de imagenes del portafolio
               db.collection("usuarios").where("videos",'!=',null)
