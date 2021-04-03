@@ -295,7 +295,7 @@
 
            
       <div>
-        <p>Hello Word</p>
+        <p>Hola mundo</p>
         <br>
         <Footer/>
       </div>
