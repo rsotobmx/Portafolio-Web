@@ -100,7 +100,7 @@
 export default {
     data(){
         return{
-            footerText:' Created By Robert Soto '
+            footerText:' Created By Robert Yovanni Soto Lopez '
         }
     }
 
