@@ -59,7 +59,7 @@
                         <a class="navbar-link">
                             
                             
-                            {{ nombre  }}
+                            {{ user.displayName  }}
 
                         </a>
                         
@@ -147,18 +147,30 @@ export default {
 
     },
     mounted(){
-        
-            var user = firebase.auth().currentUser;
-            var db=firebase.firestore();
 
-             db.collection("usuarios").doc(user.photoURL)
-             .get().then(result =>{
-                 
-                 this.mensajes=result.data().mensajes.length
-                 console.log( this.mensajes.length ) 
-                 this.nombre=result.data().nombre
+                var db=firebase.firestore();
+            
+
+             db.collection("usuarios").where("mensajes",'!=',null)
+            .onSnapshot((querySnapshot)=> {
                 
-             })
+             
+                querySnapshot.forEach((doc)=> {
+                   
+                    
+                    
+                    this.mensajes=doc.data().mensajes.length
+                    console.log( this.mensajes)
+                    this.nombre=doc.data().nombre
+                    
+
+                    
+                });
+
+            });
+
+            
+        
 
                     let scrollpos = window.scrollY
                     const header = document.querySelector("nav")

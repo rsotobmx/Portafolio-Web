@@ -117,9 +117,7 @@
 
                
                 <h3 class="title is-3">Videos Registrados</h3><hr/>
-                     <button @click.prevent="mostrarPresentacion"  class="button is-secondary"> ver lista de videos </button>
-                   
-
+                  
 
   
                   
@@ -266,6 +264,9 @@ export default {
            
     
         }
+    },
+    mounted(){
+        this.mostrarPresentacion()
     },
     methods:{
         uploadimage(e){
@@ -550,7 +551,7 @@ export default {
                             
                            // this.videos=aux_video
 
-                            db.collection("usuarios").doc(user.photoURL)
+                            db.collection("usuarios").doc("ldMsmEagn2qDQLhoMX8q")
                                
                             .update({
                                 

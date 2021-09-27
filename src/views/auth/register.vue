@@ -156,23 +156,22 @@ export default {
                             if(this.pass1.length>=6  && this.phone.length==11){  
                             
                                     
-
+                                            
                                             //bases de datos
                                             var db=firebase.firestore();
-                                                db.collection('usuarios').doc(this.nombre).set({
+                                                db.collection('usuarios').add({
                                                     nombre:this.nombre,
                                                     pass: this.pass1,
                                                     cel:this.phone,
                                                     correo:this.email,
                                                     presentacion:this.presentacion,
-                                                    
-
+                                                   
                                                      
 
                                                 })
                                                 .then(result=>{
-                                                    console.log("Guardo correctamente")
-                                                    console.log(result)
+                                                    console.log("Guardo correctamente",)
+                                                    console.log(result.id)
                                                 })
                                                 .catch(err=>{
                                                     console.log("No se guardo correctamente en la bases de datos")

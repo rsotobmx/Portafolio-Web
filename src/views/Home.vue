@@ -234,23 +234,37 @@
           </p>
           
 
-          <div class="row">
+          <div class="container portafolio">
        
             
               <div class="columns" v-if="imagendesc!=false ">
                   <div class="column" v-for="imagen in imagenes" :key="imagen" >
 
-
-                                <div class="col-sm-10" >
+                                <div class="col-sm-7" >
                                   <div class="card" >
-                                    <img :src="imagen.foto" alt="" class="card-img-top">
-                                    <div class="card-body">
-                                      <h3 class="card-title">{{imagen.nombre}}</h3>
-                                      <p class="card-text"><b>Categoria: </b>{{imagen.categoria}}.</p>
-                                       <p class="card-text"><b>SubCategoria: </b>{{imagen.subcategoria}}.</p>
-                                        <p class="card-text"><b>Desarrollo: </b>{{imagen.desarrollo}}.</p>
-                                      <a v-bind:href="imagen.url" target="_blank" class="btn btn-primary">Reproducir</a>
-                                      
+
+                                    <div class="card-image">
+
+                                    
+                                      <figure class="image is-4by3">
+                                        <img :src="imagen.foto"  alt="Placeholder image">
+                                      </figure>
+                                    </div>
+                                    
+                                      <div class="container">
+
+
+                                
+                                  
+                                    
+                                      <div class="card-body">
+                                        <h3 class="card-title">{{imagen.nombre}}</h3>
+                                        <p class="card-text"><b>Categoria: </b>{{imagen.categoria}}.</p>
+                                        <p class="card-text"><b>SubCategoria: </b>{{imagen.subcategoria}}.</p>
+                                          <p class="card-text"><b>Desarrollo: </b>{{imagen.desarrollo}}.</p>
+                                        <a v-bind:href="imagen.url" target="_blank" class="btn btn-primary">Reproducir</a>
+                                        
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -359,15 +373,16 @@ export default {
          
           //Presentacion Y nombre del Usuario
              var db=firebase.firestore();
-            var user = firebase.auth().currentUser;
+           
+            
             
 
-             db.collection("usuarios").doc(user.photoURL)
+             db.collection("usuarios").doc("ldMsmEagn2qDQLhoMX8q")
              .get().then(result =>{
                  
                  this.Ppresentacion=result.data().presentacion
                   this.pNombre=result.data().nombre
-                
+                  console.log(result.Id)
              })
              
 
@@ -447,8 +462,9 @@ export default {
           if(this.nombre && this.telefono && this.correo && this.mensaje){
 
           
-                          var user = firebase.auth().currentUser; 
-                          console.log(user.photoURL)
+                         
+                         
+                          
                           var db=firebase.firestore();
 
                            var aux_mensaje=[]
@@ -484,7 +500,7 @@ export default {
                             
                            // this.videos=aux_video
 
-                            db.collection("usuarios").doc(user.photoURL)
+                            db.collection("usuarios").doc("ldMsmEagn2qDQLhoMX8q")
                                
                             .update({
                                 

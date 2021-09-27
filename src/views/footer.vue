@@ -100,7 +100,7 @@
 export default {
     data(){
         return{
-            footerText:' Created By Robert Soto & Oriana Medina'
+            footerText:' Created By Robert Soto '
         }
     }
 

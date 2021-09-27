@@ -5,8 +5,8 @@
            
                      
                   <h3 class="title is-3">Tabla De Mensajes</h3><hr/>
-                  <button @click.prevent="mostrarPresentacion"  class="button is-secondary"> ver lista de mensajes </button>
-              
+                  
+                      <hr/>
                   <table class=" table is-hoverable  is-fullwidth">
                         <thead>
                             <tr>
@@ -21,7 +21,7 @@
                             </tr>
                         </thead>
                         <tbody >
-                            <tr v-for="mensaje in mensajes" :key="mensaje.id" >
+                            <tr v-for="mensaje in datospaginados" :key="mensaje.id" >
                                
                                 <td>{{ mensaje.nombre }}</td>
                                 <td>{{ mensaje.telefono}}</td>
@@ -38,6 +38,19 @@
                         
                         </tbody>
                     </table>
+                    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+ 
+                    <ul class="pagination-list">
+                        <li v-for="pagina in totalpaginas()"  :key="pagina.id" v-on:click="getdatapagina(pagina)"><a class="pagination-link" aria-label="Goto page 1">{{pagina}}</a></li>
+                        
+                    </ul>
+                </nav>
+                  
+        
+              
+
+
+                  
            </div>
         </div>
 
@@ -51,6 +64,10 @@ import firebase from 'firebase'
 export default {
     data(){
         return{
+            page:1,
+           pages:1,
+           error:"",
+            datospaginados:[],
              mensajes:[],
             mensaje: {
                 id:'',
@@ -63,9 +80,27 @@ export default {
         }
 
     },
+    mounted(){
+        this.getdatapagina(1);
+        this.mostrarPresentacion();
+    },
     methods:{
-         mostrarPresentacion(){
-            //var user = firebase.auth().currentUser;
+
+        getdatapagina(nopagina){
+            this.datospaginados=[]
+            let ini =(nopagina*5) - 5
+            let fin = (nopagina * 5 )
+            
+            this.datospaginados= this.mensajes.slice(ini,fin)
+            
+        },
+
+        totalpaginas(){
+            return Math.ceil( this.pages / 5)
+        },
+
+         leerdatos(){
+           
             var db=firebase.firestore();
             
 
@@ -74,15 +109,53 @@ export default {
                 
              
                 querySnapshot.forEach((doc)=> {
+                   
+                    
+                    
+                    this.total=doc.data().mensajes.length
+                    console.log( this.total)
+                    this.paginas = Math.ceil((this.total / this.porPagina)) // Redondea hacia arriba
+                    console.log("entro aqui leerdatos")
+
+                    
+                });
+
+            });
+
+         
+
+
+
+        },
+
+            mostrarPresentacion(){
+
+             console.log("entro aqui")
+             
+            //var user = firebase.auth().currentUser;
+            var db=firebase.firestore();
+            
+
+             db.collection("usuarios")
+             
+             
+             .where("cantM",'>',1)
+            
+             
+            .onSnapshot((querySnapshot)=> {
+                
+                
+             
+                querySnapshot.forEach((doc)=> {
+                    
                     
                     
                     this.mensajes=doc.data().mensajes
-                    console.log(this.mensajes)
                     
+                    this.pages=doc.data().mensajes.length
+                    console.log(this.pages,"entro aquii")
                     
-                    //tabla.innerHTML =' <tr> <th scope="row">'+ doc.data().array_id +'</th> <td> <br>'+ doc.data().array_nombrevideo+'</td><br> <td><br>'+ doc.data().array_categoria +'</td><br>  <td><br>'+ doc.data().array_subcategoria +'</td><br> <td><br>'+ doc.data().array_enlace +'</td><br>  </tr'
-                    
-
+                   
                     
                 });
 
@@ -91,6 +164,8 @@ export default {
 
 
             },
+
+                
             leido(array,pos){ 
             var user = firebase.auth().currentUser;
             var db=firebase.firestore();
