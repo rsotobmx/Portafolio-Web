@@ -11,27 +11,30 @@
                         <thead>
                             <tr>
                             
-                            <th scope="col">Nombre</th>
-                            <th scope="col">telefono</th>
-                            <th scope="col">correo</th>
-                            <th scope="col">mensaje</th>
-                            <th scope="col">Leido</th>
+                            <th scope="col">id</th>
+                            <th scope="col">transacción</th>
+                            <th scope="col">ganancia obtenida</th>
+                            
+                            <th scope="col">Precio de cierre</th>
+                            <!--
                             <th scope="col">eliminar</th>
                             <th scope="col">Marcar como leido</th>
+                            -->
                             </tr>
                         </thead>
                         <tbody >
                             <tr v-for="mensaje in datospaginados" :key="mensaje.id" >
                                
+                                <td>{{ mensaje.id }}</td>
+                                <td>{{ mensaje.telefono}}$</td>
+                                <td>{{ mensaje.correo }}$</td>
+                                
                                 <td>{{ mensaje.nombre }}</td>
-                                <td>{{ mensaje.telefono}}</td>
-                                <td>{{ mensaje.correo }}</td>
-                                <td>{{ mensaje.mensaje }}</td>
-                                <td>{{ mensaje.leido }}</td>
-                               
+                                
+                               <!--
                                 <td><button class="button is-danger" @click.prevent="borrar(mensajes,mensaje.id)" >Eliminar</button></td>
                                 <td><button class="button is-warning" @click.prevent="leido(mensajes,mensaje.id,mensaje.nombre,mensaje.url)">Leido</button></td>
-                                
+                                -->
                             </tr>
                             
                           

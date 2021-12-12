@@ -33,7 +33,7 @@
             </router-link>
             <router-link class="navbar-item is-primary" to="/mensaje">
             
-                <a>Contacto</a>
+                <a>Transacciones</a>
                
             </router-link>
              <router-link class="navbar-item is-primary " to="/galeria">
@@ -78,7 +78,7 @@
                             </router-link>
 
                             <router-link class="navbar-item" to="/mensaje">
-                                Mensajes    <article  class="message is-success">
+                                Transacciones    <article  class="message is-success">
                                                 <div class="message-header">
                                                     <p>{{mensajes}}</p>
                                                 </div>
