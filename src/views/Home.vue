@@ -12,7 +12,7 @@
             <section id="bloque1">
 
                 
-                <h1>Tu aliado para Cumplir tus sueños</h1>
+                <h1>Tu aliado para tus inversiones en Bitcoin</h1>
                 
         
             </section>
@@ -32,7 +32,7 @@
 
             <section id="bloque3">
 
-                <h2>Creación profesional de páginas web con Vue.js y CSS3</h2>
+                <h2>Creación profesional de Sistemas de inversion Predictiva con Vue.js y Python</h2>
                   
 
             </section>
@@ -45,7 +45,8 @@
               <br>
               <br>
               <br>
-            <article class="tile is-child notification is-warning">
+            <!--
+            <article class="tile is-child notification ">
                 <p class="title">Características y beneficios</p>
                 <p class="subtitle">de nuestras páginas web</p>
                 <div class="content">
@@ -62,6 +63,7 @@
                       Facil de navegar
                 </div>
             </article>
+            
               <br>
               <br>
               <br>
@@ -75,7 +77,7 @@
 
 
 
-               <article class="tile is-child notification is-danger">
+               <article class="tile is-child notification is-info">
                
                       <div class="subtitle">Informacion Del Administrador</div>
                       <div class="container">
@@ -95,21 +97,20 @@
                       </div>
                 
                 </article>
+                -->
 
                 <br>
                 <div class="tile is-ancestor">
                   <div class="tile is-vertical is-7">
                     <div class="tile">
                       <div class="tile is-parent is-vertical ">
-                        <article class="tile is-child notification is-warning ">
+                        <article class="tile is-child notification  ">
                           <div class="container-fluid"></div>
                           <p class="title has-text-centered">Servicios</p>
                           
                           <div class="content has-text-centered">
-                            <p>Servicios Diseño gráfico, 
-                              imágen corporativa, logotipos, 
-                              redes sociales, hosting y dominios, 
-                              redes sociales</p>
+                            <p>Servicios de Trading tiempo Real, 
+                              ganancias y Precio de cierre del Btc</p>
                         </div>                          
                         </article>
                       
@@ -124,7 +125,7 @@
                             
                             
                             <div class="content has-text-centered">
-                              <p>Diseñados para adaptarse a sus necesidades, Promo Web, Web Corporativa, E-commerce, Inmobiliarias</p>
+                              <p>Diseñados para adaptarse a sus necesidades, Trading tiempo real, Btc, Inteligencia artificial</p>
                               
                               <button id="btnModal" @click="modal()" class=" button is-primary">
                                 <i class="fas fa-envelope-open-text large " >
@@ -201,7 +202,7 @@
                     <article class="tile is-child notification box ">
                       <div class="content">
                         
-                        <p class="title has-text-centered">Objetivos De RSL</p>
+                        <p class="title has-text-centered">Objetivos Nuestro sistema Predictivo</p>
                         
                          <div class="content has-text-centered">
                             <p>Convertirse en una de las marcas líderes en el mercado nacional del ramo.
@@ -221,7 +222,7 @@
 
 
         </div>
-
+        <!--
         <section  id="portafolio">
           <div class="container">
           <br>
@@ -300,7 +301,7 @@
           
           
         </section>
-       
+       -->
 
     
        

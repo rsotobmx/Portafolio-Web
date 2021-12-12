@@ -61,21 +61,21 @@
 
              </div>
              <div class="col-md-3">
-                 <h4><strong>PLANES WEB</strong></h4>
+                 <h4><strong>Sistema Predictivo</strong></h4>
                  <nav>
                      <ul>
                          <li>
-                             <a href="">Inmobilarias</a>
+                             <a href="">Inteligencia Artificial</a>
                          </li>
                          <li>
-                             <a href="">Ecommerce</a>
+                             <a href="">Base de datos</a>
                          </li>
                          <li>
-                             <a href="">Web Corporativa</a>
+                             <a href="">Estrategia de trading</a>
 
                          </li>
                          <li>
-                             <a href="">Promo Web</a>
+                             <a href="">Ganancias</a>
                          </li>
                      </ul>
                  </nav>
@@ -100,7 +100,7 @@
 export default {
     data(){
         return{
-            footerText:' Created By Robert Yovanni Soto Lopez '
+            footerText:' Created By Robert Yovanni Soto Lopez & José Coronado'
         }
     }
 

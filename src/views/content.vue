@@ -58,7 +58,7 @@
                     {{error}}
                 </div>
 
-                  
+                <!--  
                     <h3 class="title is-3">Presentacion</h3><hr/>
                      <button @click.prevent="mostrarPresentacion"  class="button is-secondary"> ver Presentacion </button>
 
@@ -66,7 +66,7 @@
                     
                         {{print}}
                     </div>
-
+                    -->
                     <p>
 
                         

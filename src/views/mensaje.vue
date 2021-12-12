@@ -15,7 +15,7 @@
                             <th scope="col">transacción</th>
                             <th scope="col">ganancia obtenida</th>
                             
-                            <th scope="col">Precio de cierre</th>
+                            <th scope="col">Precio de cierre del Bitcoin</th>
                             <!--
                             <th scope="col">eliminar</th>
                             <th scope="col">Marcar como leido</th>

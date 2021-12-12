@@ -10,7 +10,7 @@
                  <div  class="navbar-brand">
             <router-link class="navbar-item" to="/">
                 <div class="logo">
-                    <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/208/4822454208_e6c5094a-c93c-4020-ae86-63567f6d6254.png?cb=1615316196" width= "120px" height= "120px"  >
+                    <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"   >
                     
                 </div>
 
@@ -36,12 +36,13 @@
                 <a>Transacciones</a>
                
             </router-link>
-             <router-link class="navbar-item is-primary " to="/galeria">
+            <!--
+            <router-link class="navbar-item is-primary " to="/galeria">
             
                 Portafolio
                
             </router-link>
-            
+            -->
 
         
             </div>
@@ -68,7 +69,7 @@
                             <router-link class="navbar-item" to="/dashboard">
                                 Perfil Administrador
                             </router-link>
-                           
+                           <!--
                             <a class="navbar-item" to=/mensaje>
                                 Componentes Web
                             </a>
@@ -76,7 +77,7 @@
                             <router-link class="navbar-item" to="/galeria">
                                 Galería de Videos
                             </router-link>
-
+                            -->
                             <router-link class="navbar-item" to="/mensaje">
                                 Transacciones    <article  class="message is-success">
                                                 <div class="message-header">
