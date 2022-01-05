@@ -4,7 +4,7 @@
            <div class="column is-10 is-offset-1">
            
                      
-                  <h3 class="title is-3">Tabla De transacciónes</h3><hr/>
+                  <h3 class="title is-3">Bandeja de mensajes</h3><hr/>
                   
                       <hr/>
                   <table class=" table is-hoverable  is-fullwidth">
@@ -12,10 +12,10 @@
                             <tr>
                             
                             <th scope="col">id</th>
-                            <th scope="col">transacción</th>
-                            <th scope="col">ganancia obtenida</th>
-                            
-                            <th scope="col">Precio de cierre del Bitcoin</th>
+                            <th scope="col">nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">telefono</th>
+                            <th scope="col">mensaje</th>
                             <!--
                             <th scope="col">eliminar</th>
                             <th scope="col">Marcar como leido</th>
@@ -26,10 +26,12 @@
                             <tr v-for="mensaje in datospaginados" :key="mensaje.id" >
                                
                                 <td>{{ mensaje.id }}</td>
-                                <td>{{ mensaje.telefono}}$</td>
-                                <td>{{ mensaje.correo }}$</td>
-                                
                                 <td>{{ mensaje.nombre }}</td>
+                                <td>{{ mensaje.correo }}</td>
+                                <td>{{ mensaje.telefono}}</td>
+                                
+                                
+                                <td>{{ mensaje.mensaje }}</td>
                                 
                                <!--
                                 <td><button class="button is-danger" @click.prevent="borrar(mensajes,mensaje.id)" >Eliminar</button></td>
@@ -107,7 +109,7 @@ export default {
             var db=firebase.firestore();
             
 
-             db.collection("usuarios").where("mensajes",'!=',null)
+             db.collection("usuarios").where("videos",'!=',null)
             .onSnapshot((querySnapshot)=> {
                 
              
@@ -115,7 +117,7 @@ export default {
                    
                     
                     
-                    this.total=doc.data().mensajes.length
+                    this.total=doc.data().videos.length
                     console.log( this.total)
                     this.paginas = Math.ceil((this.total / this.porPagina)) // Redondea hacia arriba
                     console.log("entro aqui leerdatos")
@@ -142,7 +144,7 @@ export default {
              db.collection("usuarios")
              
              
-             .where("cantM",'>',1)
+             .where("videos",'!=',null)
             
              
             .onSnapshot((querySnapshot)=> {
@@ -153,9 +155,9 @@ export default {
                     
                     
                     
-                    this.mensajes=doc.data().mensajes
+                    this.mensajes=doc.data().videos
                     
-                    this.pages=doc.data().mensajes.length
+                    this.pages=doc.data().videos.length
                     console.log(this.pages,"entro aquii")
                     
                    

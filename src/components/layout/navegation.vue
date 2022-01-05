@@ -36,13 +36,17 @@
                 <a>Transacciones</a>
                
             </router-link>
-            <!--
-            <router-link class="navbar-item is-primary " to="/galeria">
             
-                Portafolio
-               
-            </router-link>
-            -->
+            <template v-if="user">
+                 <template v-if="user.displayName === 'admin'">
+                    <router-link class="navbar-item is-primary " to="/contact">
+                    
+                        Bandeja
+                    
+                    </router-link>
+                 </template>
+            </template >
+            
 
         
             </div>
@@ -67,17 +71,25 @@
 
                         <div class="navbar-dropdown">
                             <router-link class="navbar-item" to="/dashboard">
-                                Perfil Administrador
+                                Editar Usuario
                             </router-link>
+
                            <!--
                             <a class="navbar-item" to=/mensaje>
                                 Componentes Web
                             </a>
-
-                            <router-link class="navbar-item" to="/galeria">
-                                Galería de Videos
-                            </router-link>
                             -->
+
+                            <template v-if="user.displayName === 'admin'">
+                                <router-link class="navbar-item" to="/contact">
+                                    bandeja de mensajes<article  class="message is-success">
+                                                    <div class="message-header">
+                                                        <p>{{videos}}</p>
+                                                    </div>
+                                                </article>
+                                </router-link>
+                            </template>
+                            
                             <router-link class="navbar-item" to="/mensaje">
                                 Transacciones    <article  class="message is-success">
                                                 <div class="message-header">
@@ -143,6 +155,7 @@ export default {
             showNavbar:true,
             lastscrollpos:0,
             mensajes:'',
+            videos:'',
             nombre:''
         }
 
@@ -160,7 +173,8 @@ export default {
                    
                     
                     
-                    this.mensajes=doc.data().mensajes.length
+                   this.mensajes=doc.data().mensajes.length
+                    
                     console.log( this.mensajes)
                     this.nombre=doc.data().nombre
                     
@@ -169,6 +183,27 @@ export default {
                 });
 
             });
+            db.collection("usuarios").where("videos",'!=',null)
+            .onSnapshot((querySnapshot)=> {
+                
+             
+                querySnapshot.forEach((doc)=> {
+                   
+                    
+                    
+                   this.videos=doc.data().videos.length
+                    
+                    console.log( this.videos)
+                    this.nombre=doc.data().nombre
+                    
+
+                    
+                });
+
+            });
+
+
+           
 
             
         

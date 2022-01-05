@@ -471,7 +471,7 @@ export default {
                            var aux_mensaje=[]
 
                         
-                          db.collection("usuarios").where("mensajes","!=",null)
+                          db.collection("usuarios").where("videos","!=",null)
                             .get()
                             
                             .then((querySnapshot) => {
@@ -480,7 +480,7 @@ export default {
                                 querySnapshot.forEach((doc)=> {
                                     
                                     console.log("entroo")
-                                    aux_mensaje=doc.data().mensajes
+                                    aux_mensaje=doc.data().videos
                                     console.log(aux_mensaje)
 
 
@@ -505,7 +505,7 @@ export default {
                                
                             .update({
                                 
-                              mensajes: aux_mensaje
+                              videos: aux_mensaje
 
                             }).then(result=>{
                                     console.log("Guardo correctamente")

@@ -6,6 +6,7 @@ import register from '../views/auth/register.vue'
 import dashboard from '../views/dashboard.vue'
 import mensaje from '../views/mensaje.vue'
 import galeria from '../views/galeria.vue'
+import contact from '../views/contact.vue'
 import firebase from 'firebase'
 
 
@@ -40,7 +41,15 @@ const routes = [
     path: '/mensaje',
     name: 'mensaje',
     component: mensaje,
-    
+    meta:{
+      requiresAuth: true
+    }
+
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: contact,
     meta:{
       requiresAuth: true
     }
