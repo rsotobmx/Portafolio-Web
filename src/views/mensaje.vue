@@ -48,7 +48,10 @@
                         
                     </ul>
                 </nav>
-                  
+
+                <div>
+                    <button class="button is-warning">{{msg}}</button>
+                </div>
         
               
 
@@ -64,9 +67,11 @@
 <script>
 import '@/firebase/init'
 import firebase from 'firebase'
+import axios from 'axios'
 export default {
     data(){
         return{
+            msg:"holaa",
             page:1,
            pages:1,
            error:"",
@@ -87,7 +92,23 @@ export default {
         this.getdatapagina(1);
         this.mostrarPresentacion();
     },
+    created(){
+        this.getResponse()
+    },
     methods:{
+        getResponse(){
+            const path = 'http://127.0.0.1:5000/mensaje';
+            axios.get(path)
+            .then((res)=>{
+                console.log(res.data)
+                this.msg =res.data;
+            })
+            .catch((err)=>{
+                console.error(err)
+            })
+        },
+
+        
 
         getdatapagina(nopagina){
             this.datospaginados=[]
