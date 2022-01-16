@@ -16,9 +16,9 @@ def greetings():
 @app.route('/mensaje',methods=['GET'])
 def mensaje():
     #estrategia trabajando
-    return("Play")
-
-
+   
+    subprocess.call(["python",'strategy.py'])
+    return "Trabajando" 
 if __name__ == "__main__":
     app.run(debug=True)
     
