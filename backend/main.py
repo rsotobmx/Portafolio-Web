@@ -1,9 +1,13 @@
+from ast import Global
+import os
+import signal
 import subprocess
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import os
-import signal
+from flask_restful import Resource, Api
+import time
 app = Flask(__name__)
+
 
 app.config.from_object(__name__)
 CORS(app,resources={r"/*":{'origins':'*'}})
@@ -11,37 +15,36 @@ CORS(app,resources={r"/*":{'origins':'*'}})
 #    resources={r"/*":{'origins':'http://localhost:8080',
 #                         "allow_headers":"Access-Control-Allow-Origin"}})
 
-@app.route('/',methods=['GET'])
-def greetings():
-    return("Hello, robert")
+processes=[]
+
+
+
 
 @app.route('/mensaje',methods=['GET','POST'])
-def mensaje():
+def Estrategia():
     
-    p1=None  
     if request.method == "GET":
         p1 = subprocess.Popen(["python",'strategy.py'])
         #estrategia trabajando
+        processes.append(p1)
         print("trabajando")
-        print(p1)
-        #p1.terminate()
-        print(p1)
+        print(p1.pid)
+        print(processes)
         
         
-        return "p1 "
+            
+        return "Trabajando"
     else:
-        p1 = subprocess.Popen(["python",'strategy.py'])
-        print(p1)
-        p1.terminate()
-        print("Stopp")
+        print(processes[-1].terminate())
+        print(processes[-1].pid)
+        print("stop a esa mierdaa")
+        for process in processes:
+            process.terminate()
         return "stop"
         
-    
 
-
-
-
-
+        
+ 
 
 if __name__ == "__main__":
     app.run(debug=True)
