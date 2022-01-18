@@ -50,10 +50,14 @@
                 </nav>
 
                 <div>
-                    <button @click.prevent="getResponse" class="button is-warning">{{msg}}</button>
+                    <button @click.prevent="getResponse" class="button is-primary">{{msg}}</button>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <button @click.prevent="PostResponse" class="button is-danger">{{msg2}}</button>
                 </div>
         
-              
 
 
                   
@@ -71,7 +75,8 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            msg:"play",
+            msg:"Play",
+            msg2:"Stop",
             page:1,
            pages:1,
            error:"",
@@ -102,13 +107,29 @@ export default {
             
             .then((res)=>{
                 console.log(res.data())
-                this.msg=res.data()
+                this.msg=res.data
                 console.log("entro en trading")
             })
             .catch((err)=>{
                 console.error(err)
             })
         },
+        PostResponse() {
+            this.msg="Play"
+            const path = 'http://127.0.0.1:5000/mensaje';
+            axios.post(path)
+                .then(() => {
+                
+                console.log("hizo el post")
+                this.msg="Play"
+            
+        
+                })
+        .catch((error) => {
+          console.log(error);
+          //this.getResponse();
+        });
+    },
 
         
 
