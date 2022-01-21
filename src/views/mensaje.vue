@@ -106,9 +106,9 @@ export default {
             axios.get(path)
             
             .then((res)=>{
-                console.log(res.data())
-                this.msg=res.data
-                console.log("entro en trading")
+                //console.log(res.data())
+                
+                console.log("entro en trading",res)
             })
             .catch((err)=>{
                 console.error(err)

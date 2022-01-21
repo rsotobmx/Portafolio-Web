@@ -5,9 +5,10 @@
        <div class="columns">
            <div class="column is-6 is-offset-3">
                
-               <h3 class="title is-3">Elegir foto de Perfil</h3><hr/>
+               <!--<h3 class="title is-3">Elegir foto de Perfil</h3><hr/>
                     <Imagen/> 
                       <br/>
+                -->
                <h3 class="title is-3">Editar Usuario</h3><hr/>
              
             
@@ -92,11 +93,11 @@
 
 import '@/firebase/init'
 import firebase from 'firebase'
-import imagen from '../components/layout/imagen'
+//import imagen from '../components/layout/imagen'
 
 export default {
     components:{
-        'Imagen': imagen
+        //'Imagen': imagen
         
     },
 

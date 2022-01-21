@@ -12,16 +12,16 @@
             <section id="bloque1">
 
                 
-                <h1>Tu aliado para tus inversiones en Bitcoin</h1>
+                <h1>sistema de inversion Predictiva en Bitcoin</h1>
                 
         
             </section>
 
             <section id="bloque2">
 
-                <p>Somos una empresa de diseño de páginas web, estamos ubicados en Valencia, Carabobo. Le ofrecemos todos los servicios necesarios para tener presencia efectiva en internet. Analizamos, le damos forma y vida a su proyecto!</p>
+                <p>Somos una empresa de diseño de Sistemas Financieros, estamos ubicados en Valencia, Carabobo. Analizamos, le damos forma y vida a su proyecto!</p>
 
-                <p>Que hacemos En RSL TECH, trabajamos para darle vida a sus ideas. 
+                <p>Que hacemos En este Sistema, trabajamos para darle vida a sus ideas. 
                     Nuestro equipo de trabajo aportará todo su experiencia para que su proyecto sea un caso de exito</p>
 
               
